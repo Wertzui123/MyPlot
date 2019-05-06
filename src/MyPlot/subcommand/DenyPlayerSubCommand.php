@@ -38,7 +38,7 @@ class DenyPlayerSubCommand extends SubCommand
 			return true;
 		}
 		$dplayer = $this->getPlugin()->getServer()->getPlayer($dplayer) ?? $this->getPlugin()->getServer()->getOfflinePlayer($dplayer);
-		if(!$dplayer instanceof Player) {
+		if(!$dplayer instanceof Player || strtolower($args[0])) {
 			$sender->sendMessage($this->translateString("denyplayer.notaplayer"));
 			return true;
 		}
